@@ -22,7 +22,6 @@
             title.innerHTML=cnt+" (running)";
             if (cnt<=0){
                 clickStop();
-                title.innerHTML="Timer Hmm";
                 alert("Time out");
             }
     }
@@ -59,6 +58,7 @@
         document.getElementById("stopButt").toggleAttribute("hidden");
         clearInterval(itv);
         document.getElementById("pauseButt").innerHTML="Hmmause";
+        title.innerHTML="Timer Hmm";
         cnt=0;
     }
 </script>
