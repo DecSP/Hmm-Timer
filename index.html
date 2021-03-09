@@ -2,7 +2,7 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <head>
-    <title id="title">Timer HMM</title>
+    <title id="title">HMM-TIMER</title>
     <link rel = "icon" href =  "clock1.png" type = "image/x-icon"> 
     <style>
         #qframe0{
@@ -79,7 +79,7 @@
         if (running){
             document.getElementById("pauseButt").innerHTML="HMM-RESUME";
             title.innerHTML=cnt+" (pause)";
-            title.innerHTML="Timer Hmm (pause)";
+            title.innerHTML="HMM-TIMER (pause)";
             running=false;
             clearInterval(itv);
         }
@@ -98,7 +98,7 @@
         document.getElementById("stopButt").toggleAttribute("hidden");
         clearInterval(itv);
         document.getElementById("pauseButt").innerHTML="HMM-PAUSE";
-        title.innerHTML="Timer Hmm (idle)";
+        title.innerHTML="HMM-TIMER";
         cnt=0;
     }
 </script>
