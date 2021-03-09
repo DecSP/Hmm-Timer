@@ -77,14 +77,14 @@
     }
     function clickPause(){
         if (running){
-            document.getElementById("pauseButt").innerHTML="Hmmesume";
+            document.getElementById("pauseButt").innerHTML="HMM-RESUME";
             title.innerHTML=cnt+" (pause)";
             title.innerHTML="Timer Hmm (pause)";
             running=false;
             clearInterval(itv);
         }
         else{
-            document.getElementById("pauseButt").innerHTML="Hmmause";
+            document.getElementById("pauseButt").innerHTML="HMM-PAUSE";
             title.innerHTML=cnt+" (running)";
             itv=setInterval(runTimer,1000);
             running=true;
@@ -97,7 +97,7 @@
         document.getElementById("pauseButt").toggleAttribute("hidden");
         document.getElementById("stopButt").toggleAttribute("hidden");
         clearInterval(itv);
-        document.getElementById("pauseButt").innerHTML="Hmmause";
+        document.getElementById("pauseButt").innerHTML="HMM-PAUSE";
         title.innerHTML="Timer Hmm (idle)";
         cnt=0;
     }
