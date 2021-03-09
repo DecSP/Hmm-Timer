@@ -2,14 +2,14 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <head>
-    <title id="title">Timer Hmm (idle)</title>
-    <link rel = "icon" href =  "clock.jpg" type = "image/x-icon"> 
+    <title id="title">Timer HMM</title>
+    <link rel = "icon" href =  "clock1.png" type = "image/x-icon"> 
     <style>
         #qframe0{
-            max-width: 1100px; border: 1px solid white; margin: 5px; padding: 15px; background-color: #AAFFC9; margin: 0 auto; opacity:0.7;border-radius: 15px;
+            max-width: 1000px; border: 1px solid white; margin: 5px; padding: 15px; background-color: #AAFFC9; margin: 0 auto; opacity:0.7;border-radius: 15px;
         }
         #qframe1{
-            max-width: 1000px; border: 1px white; margin: 5px; padding: 15px; background-color: #E2FFE8; margin: 0 auto;
+            max-width: 1000px; border: 1px white; margin: 5px; padding: 20px; background-color: #AAFFC9; margin: 0 auto; /*#E2FFE8*/
         }
         .center {
             margin: auto;
@@ -19,17 +19,34 @@
         body {
             background-image: url('bg.jpg');
         }
+        .button {
+    		width: 115px;
+    		height: 80%;
+		    background: #0096BB;
+		    padding: 10px;
+		    text-align: center;
+		    border-radius: 5px;
+		    border-color: #0096BB;
+		    color: #fff;
+		    font-weight: bold;
+		    line-height: 25px;
+		    box-shadow: -5px 5px;
+		}
+		.button:hover{
+			background: #EFEFEF;
+			color: #0096BB;
+		}
     </style>
 </head>
 
 <body>
-    <h1 style="text-align:center;font-family:'Courier New';">  HMM SECONDS ??</h1>
+    <h1 style="text-align:center;font-family:basic-sans, sans-serif;text-transform:uppercase;font-style: italic;font-size:300%;color:#1dc0e0;">  HMM COUNTING ??</h1>
 <div id="qframe0">
-    <div class="center">
-    <input id="count" type="text" require maxlength="12" size="10" style="text-align:center;font-size:120%;">
-    </div>
-    <div id="qframe1">
-    <button onclick="clickStart()" id="startButt" >Hmmtart</button> <button id="pauseButt" onclick="clickPause()" hidden>Hmmause</button>&nbsp;&nbsp;<button id="stopButt" onclick="clickStop()" hidden>Hmmtop</button>
+    <div style="text-align: center;line-height: 70px;">
+    	<input id="count" type="text" require maxlength="12" size="10" style="text-align:center;font-size:200%;border-radius: 0.1em;">
+    	<div id="qframe1" style="line-height: 150%;text-align: center;">
+    		<button class="button" onclick="clickStart()" id="startButt" >HMM-START</button> <button class="button" id="pauseButt" onclick="clickPause()" hidden>HMM-PAUSE</button>&nbsp;&nbsp;<button class="button" id="stopButt" onclick="clickStop()" hidden>HMM-STOP</button>
+    	</div>
     </div>
     <h1 id="timerText" style="text-align:center;font-size:670%">0</h1>
 </div>
