@@ -2,14 +2,15 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <head>
-    <title id="title">HMM-TIMER</title>
+    <title id="title">Timer HMM</title>
     <link rel = "icon" href =  "clock1.png" type = "image/x-icon"> 
     <style>
         #qframe0{
-            max-width: 1000px; border: 1px solid white; margin: 5px; padding: 15px; background-color: #AAFFC9; margin: 0 auto; opacity:0.7;border-radius: 15px;
+            max-width: 500px; margin: 5px; padding: 15px; background-color: #f5f7fa; margin: 0 auto; opacity:0.85;
+            /*background-color: #AAFFC9;*/
         }
         #qframe1{
-            max-width: 1000px; border: 1px white; margin: 5px; padding: 20px; background-color: #AAFFC9; margin: 0 auto; /*#E2FFE8*/
+            max-width: 1000px; border: 1px white; margin: 5px; padding: 20px; background-color: #f5f7fa; margin: 0 auto; /*#E2FFE8*/
         }
         .center {
             margin: auto;
@@ -17,38 +18,50 @@
             padding: 10px;
         }
         body {
-            background-image: url('bg.jpg');
+            /*background-image: url('bg.jpg');*/
+    		align-items: center;
+    		justify-content: center;
+    		background-image: linear-gradient(236deg, #74ecd5, #acb6e5);
+    		min-height: 100vh;
+    		font-family: "Roboto", Helvetica, Arial, sans-serif;
         }
         .button {
-    		width: 115px;
+    		width: 135px;
     		height: 80%;
-		    background: #0096BB;
+		    background: #f5f7fa;
 		    padding: 10px;
 		    text-align: center;
 		    border-radius: 5px;
-		    border-color: #0096BB;
-		    color: #fff;
+		    border-color: #000042;
+		    color: #000042;
 		    font-weight: bold;
 		    line-height: 25px;
 		    box-shadow: -5px 5px;
 		}
 		.button:hover{
-			background: #EFEFEF;
-			color: #0096BB;
+			/*background: #EFEFEF;
+			color: #0096BB;*/
+			background: #ccd6e5;
+			color: #000042;
 		}
+		.button:active {
+  			background-color: #ccd6e5;
+  			box-shadow: 0 0px #666;
+  			transform: translateX(-5px) translateY(5px);
+}
     </style>
 </head>
 
 <body>
-    <h1 style="text-align:center;font-family:basic-sans, sans-serif;text-transform:uppercase;font-style: italic;font-size:300%;color:#1dc0e0;">  HMM COUNTING ??</h1>
-<div id="qframe0">
+    <h1 style="text-align:center;text-transform:uppercase;font-size:300%;color:#000042;">HMM COUNTING??</h1>
+<div id="qframe0" style="box-shadow: -5px 5px 35px 0 rgba(0, 0, 0, 0.3999);">
     <div style="text-align: center;line-height: 70px;">
     	<input id="count" type="text" require maxlength="12" size="10" style="text-align:center;font-size:200%;border-radius: 0.1em;">
-    	<div id="qframe1" style="line-height: 150%;text-align: center;">
+    	<div id="qframe1" style="line-height: 120%;text-align: center;">
     		<button class="button" onclick="clickStart()" id="startButt" >HMM-START</button> <button class="button" id="pauseButt" onclick="clickPause()" hidden>HMM-PAUSE</button>&nbsp;&nbsp;<button class="button" id="stopButt" onclick="clickStop()" hidden>HMM-STOP</button>
     	</div>
     </div>
-    <h1 id="timerText" style="text-align:center;font-size:670%">0</h1>
+    <h1 id="timerText" style="text-align:center;font-size:670%;color:#000025;">0</h1>
 </div>
    
 <script>
@@ -59,12 +72,17 @@
     function runTimer() {
             document.getElementById("timerText").innerHTML=--cnt;
             title.innerHTML=cnt+" (running)";
+            if (cnt%10==0 || cnt<10)
+            	document.getElementById("timerText").style.color="#6477ce";
+            else 
+            	document.getElementById("timerText").style.color="#000025";
             if (cnt<=0){
                 clickStop();
                 alert("Time out");
             }
     }
     function clickStart(){
+    	document.getElementById("timerText").style.color="#000025";
         var x=document.getElementById("count");
         x.toggleAttribute("disabled");
         document.getElementById("startButt").toggleAttribute("hidden");
@@ -76,10 +94,11 @@
         running=true;
     }
     function clickPause(){
+    	document.getElementById("timerText").style.color="#000025";
         if (running){
             document.getElementById("pauseButt").innerHTML="HMM-RESUME";
             title.innerHTML=cnt+" (pause)";
-            title.innerHTML="HMM-TIMER (pause)";
+            title.innerHTML="Timer Hmm (pause)";
             running=false;
             clearInterval(itv);
         }
@@ -91,6 +110,7 @@
         }
     }
     function clickStop(){
+    	document.getElementById("timerText").style.color="#000025";
         var x=document.getElementById("count");
         x.toggleAttribute("disabled");
         document.getElementById("startButt").toggleAttribute("hidden");
@@ -98,7 +118,7 @@
         document.getElementById("stopButt").toggleAttribute("hidden");
         clearInterval(itv);
         document.getElementById("pauseButt").innerHTML="HMM-PAUSE";
-        title.innerHTML="HMM-TIMER";
+        title.innerHTML="Timer Hmm (idle)";
         cnt=0;
     }
 </script>
