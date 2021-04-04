@@ -4,4 +4,4 @@
 ### Hmm... maybe not :)))
 
 ## Link: https://decsp.github.io/Hmm-Timer/
-<img src="./screenshot.png" width=80% height=80%>
+<img src="./scrshot.png" width=80% height=80%>
