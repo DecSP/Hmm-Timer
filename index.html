@@ -7,7 +7,6 @@
     <style>
         #qframe0{
             max-width: 500px; margin: 5px; padding: 15px; background-color: #f5f7fa; margin: 0 auto; opacity:0.85;
-            /*background-color: #AAFFC9;*/
         }
         #qframe1{
             max-width: 1000px; border: 1px white; margin: 5px; padding: 20px; background-color: #f5f7fa; margin: 0 auto; /*#E2FFE8*/
@@ -18,14 +17,15 @@
             padding: 10px;
         }
         body {
-            /*background-image: url('bg.jpg');*/
     		align-items: center;
-    		justify-content: center;
     		background-image: linear-gradient(236deg, #74ecd5, #acb6e5);
     		min-height: 100vh;
+            overflow: hidden;
     		font-family: "Roboto", Helvetica, Arial, sans-serif;
         }
         .button {
+            margin: 0 auto;
+            transform: translateX(5px);
     		width: 135px;
     		height: 80%;
 		    background: #f5f7fa;
@@ -37,10 +37,9 @@
 		    font-weight: bold;
 		    line-height: 25px;
 		    box-shadow: -5px 5px;
+            transition: 0.03s ease-in-out;
 		}
 		.button:hover{
-			/*background: #EFEFEF;
-			color: #0096BB;*/
 			background: #ccd6e5;
 			color: #000042;
 		}
@@ -53,10 +52,10 @@
 </head>
 
 <body>
-    <h1 style="text-align:center;text-transform:uppercase;font-size:300%;color:#000042;">HMM TIMER??</h1>
+    <h1 style="text-transform:uppercase; font-size:300%; color:#000042; text-align: center;">HMM TIMER??</h1>
 <div id="qframe0" style="box-shadow: -5px 5px 35px 0 rgba(0, 0, 0, 0.3999);">
     <div style="text-align: center;line-height: 70px;">
-    	<input id="count" type="text" require maxlength="12" size="10" style="text-align:center;font-size:200%;border-radius: 0.1em;">
+    	<input id="count" type="text" require maxlength="12" size="10" style="text-align:center; margin: 0 auto; font-size:200%;border-radius: 5px;">
     	<div id="qframe1" style="line-height: 120%;text-align: center;">
     		<button class="button" onclick="clickStart()" id="startButt" >HMM-START</button> <button class="button" id="pauseButt" onclick="clickPause()" hidden>HMM-PAUSE</button>&nbsp;&nbsp;<button class="button" id="stopButt" onclick="clickStop()" hidden>HMM-STOP</button>
     	</div>
